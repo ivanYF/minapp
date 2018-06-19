@@ -1,0 +1,28 @@
+.title {
+	font-size: 50rpx;
+}
+.navBar-box{
+	width: 100%;
+	height: 80rpx;
+	white-space: nowrap;
+	box-sizing:border-box;
+	padding: 0 15rpx;
+	border-bottom: 1rpx solid #ccc;
+	.cate-item{
+		display: inline-block;
+		font-size: 34rpx;
+		padding: 0 5rpx;
+		margin:0 15rpx;
+		line-height: 80rpx;
+		position: relative;
+		&.active:after{
+			width: 100%;
+			position: absolute;
+			bottom: 2rpx;
+			left: 0;
+			content: '';
+			height: 4rpx;
+			background: #35495e;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+<view class="container">
+	<scroll-view class="navBar-box" scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollL}}" bindscroll="scrollFun">
+	    <view class="cate-item {{curIndex == index ? 'active':''}}" wx:for="{{category}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCategory">
+	        {{item.name}}
+	    </view>
+	</scroll-view>
+</view>
