@@ -4,4 +4,9 @@
 	        {{item.name}}
 	    </view>
 	</scroll-view>
+
+	<view class="module-list">
+		<!-- 录音 -->
+		<navigator class="module-item" url="../record/record" hover-class="navigator-hover">录音</navigator>
+	</view>
 </view>

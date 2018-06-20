@@ -1,5 +1,16 @@
-.title {
-	font-size: 50rpx;
+@mixin arrow($length,$border, $color, $angle) {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $length;
+    height: $length;
+    border-width: $border;
+    border-style: solid;
+    border-color: $color $color transparent transparent;
+    transform: translate(-50%, -50%) rotate($angle);
+    -moz-transform: translate(-50%, -50%) rotate($angle);
+    -ms-transform: translate(-50%, -50%) rotate($angle);
+    -webkit-transform: translate(-50%, -50%) rotate($angle);
 }
 .navBar-box{
 	width: 100%;
@@ -23,6 +34,32 @@
 			content: '';
 			height: 4rpx;
 			background: #35495e;
+		}
+	}
+}
+.module-list{
+	margin-top: 30rpx;
+	display: inline-block;
+	padding: 30rpx;
+	box-sizing:border-box;
+	width: 100%;
+	.module-item{
+		width: 100%;
+		display: inline-block;
+		line-height: 60rpx;
+		font-size: 30rpx;
+		position: relative;
+		background: #35495e;
+		color: #fff;
+		box-sizing:border-box;
+		padding: 10rpx 20rpx;
+		border-radius: 6rpx;
+		&:after{
+			content: '';
+			position: absolute;
+			top:50%;
+			right: 20rpx;
+			@include arrow(20rpx,3rpx,#fff,45deg);
 		}
 	}
 }

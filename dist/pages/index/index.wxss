@@ -1,6 +1,3 @@
-.title {
-  font-size: 50rpx; }
-
 .navBar-box {
   width: 100%;
   height: 80rpx;
@@ -23,3 +20,38 @@
       content: '';
       height: 4rpx;
       background: #35495e; }
+
+.module-list {
+  margin-top: 30rpx;
+  display: inline-block;
+  padding: 30rpx;
+  box-sizing: border-box;
+  width: 100%; }
+  .module-list .module-item {
+    width: 100%;
+    display: inline-block;
+    line-height: 60rpx;
+    font-size: 30rpx;
+    position: relative;
+    background: #35495e;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 10rpx 20rpx;
+    border-radius: 6rpx; }
+    .module-list .module-item:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 20rpx;
+      content: '';
+      display: block;
+      position: absolute;
+      width: 20rpx;
+      height: 20rpx;
+      border-width: 3rpx;
+      border-style: solid;
+      border-color: #fff #fff transparent transparent;
+      transform: translate(-50%, -50%) rotate(45deg);
+      -moz-transform: translate(-50%, -50%) rotate(45deg);
+      -ms-transform: translate(-50%, -50%) rotate(45deg);
+      -webkit-transform: translate(-50%, -50%) rotate(45deg); }

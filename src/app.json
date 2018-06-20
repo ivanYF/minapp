@@ -1,7 +1,8 @@
 {
     "pages": [
         "pages/index/index",
-        "pages/demo/demo"
+        "pages/demo/demo",
+        "pages/record/record"
     ],
     "window": {
         // 类型：HexColor；默认值：#000000

@@ -1,0 +1,57 @@
+.container{
+	width: 100%;
+	padding: 0 50rpx;
+	box-sizing:border-box;
+	.record-c{
+		display: inline-block;
+		width: 100%;
+		margin: 20rpx 0;
+		.record-type{
+			width: 100%;
+			display: inline-block;
+			background: #35495e;
+			font-size: 28rpx;
+			color: #fff;
+			text-align: center;
+			line-height: 80rpx;
+			border-radius: 8rpx;
+			margin-bottom: 20rpx;
+			position: relative;
+			.time{
+				position: absolute;
+				font-size: 24rpx;
+				color: #fff;
+				line-height: 80rpx;
+				width: 100rpx;
+				right: 0;
+				top:0;
+			}
+		}
+	}
+	.record-list{
+		width: 100%;
+		display: inline-block;
+		.record-item{
+			width: 100%;
+			display: inline-block;
+			box-sizing:border-box;
+			border:2rpx solid #35495e;
+			border-radius: 70rpx;
+			padding: 0 30rpx;
+			line-height: 100rpx;
+			color: #fff;
+			background: #35495e;
+			span{
+				font-size: 30rpx;
+				&.time{
+					display: inline-block;
+					float: left;
+				}
+				&.btn{
+					display: inline-block;
+					float: right;
+				}
+			}
+		}
+	}
+}

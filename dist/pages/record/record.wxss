@@ -1,0 +1,48 @@
+.container {
+  width: 100%;
+  padding: 0 50rpx;
+  box-sizing: border-box; }
+  .container .record-c {
+    display: inline-block;
+    width: 100%;
+    margin: 20rpx 0; }
+    .container .record-c .record-type {
+      width: 100%;
+      display: inline-block;
+      background: #35495e;
+      font-size: 28rpx;
+      color: #fff;
+      text-align: center;
+      line-height: 80rpx;
+      border-radius: 8rpx;
+      margin-bottom: 20rpx;
+      position: relative; }
+      .container .record-c .record-type .time {
+        position: absolute;
+        font-size: 24rpx;
+        color: #fff;
+        line-height: 80rpx;
+        width: 100rpx;
+        right: 0;
+        top: 0; }
+  .container .record-list {
+    width: 100%;
+    display: inline-block; }
+    .container .record-list .record-item {
+      width: 100%;
+      display: inline-block;
+      box-sizing: border-box;
+      border: 2rpx solid #35495e;
+      border-radius: 70rpx;
+      padding: 0 30rpx;
+      line-height: 100rpx;
+      color: #fff;
+      background: #35495e; }
+      .container .record-list .record-item span {
+        font-size: 30rpx; }
+        .container .record-list .record-item span.time {
+          display: inline-block;
+          float: left; }
+        .container .record-list .record-item span.btn {
+          display: inline-block;
+          float: right; }
