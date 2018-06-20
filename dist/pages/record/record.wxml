@@ -1,22 +1,22 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
 <view class="container">
 	<div class="record-c">
-		<div class="record-type record-type-ready">
+		<div wx:if="{{recordStatus == 1}}" class="record-type record-type-ready" bindtap="startAudio">
 			<span class="tag">开始录音</span>
 		</div>
-		<div class="record-type record-type-ing">
+		<div wx:if="{{recordStatus == 2}}" class="record-type record-type-ing" bindtap="stopAudio">
 			<span class="tag">录音中</span>
-			<span class="time">11s</span>
+			<span class="time" wx:if="{{timeNub}}">{{timeNub}} "s</span>
 		</div>
-		<div class="record-type record-type-done">
+		<div wx:if="{{recordStatus == 3}}" class="record-type record-type-done">
 			<span class="tag">录音完成</span>
 		</div>
 	</div>
 	<div class="record-list" wx:if="{{recordList && recordList.length}}">
 		<div class="record-item" wx:for="{{recordList}}" wx:for-item="rItme" wx:for-index="rIdx" wx:key="index">
-			<span class="time">00.08</span>
-			<span class="btn">点击播放</span>
-			<span class="btn">点击暂停</span>
+			<span class="time" wx:if="{{rItme.time}}">{{rItme.time}} "s</span>
+			<span class="btn" wx:if="{{rItme.link != recording.link}}">点击播放</span>
+			<span class="btn" wx:else>点击暂停</span>
 		</div>
 	</div>
 </view>
