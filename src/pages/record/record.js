@@ -49,6 +49,8 @@ Page({
             format: 'mp3',//音频格式，有效值 aac/mp3
             // frameSize: 50,//指定帧大小，单位 KB
         }
+        timeNub = 0;
+        _this.setData({timeNub:0})
         //开始录音
         recorderManager.start(options);
         recorderManager.onStart(() => {
@@ -56,6 +58,7 @@ Page({
             _this.setData({ recordStatus:2 })
             console.log("开始计时");
             timedCount = setInterval(function(){
+                console.log("32323");
                 timeNub++;
                 _this.setData({timeNub:timeNub})
             },1000)
@@ -70,7 +73,7 @@ Page({
         var _this = this;
         recorderManager.stop();
         _this.setData({ recordStatus:3 })
-        clearInterval('timedCount');
+        clearInterval(timedCount);
         setTimeout(function(){
             _this.setData({ recordStatus:1 })  // 增加新的语音操作
         },2000)
@@ -103,36 +106,32 @@ Page({
     },
     //播放声音
     playAudio: function (e) {
-        var _this = this;
-        if (_this.data.isAudioPlay) {
-            // 暂停
-            innerAudioContext.stop();
-            _this.setData({isAudioPlay:false})  
-            return false;
-        };
-        var link = e.currentTarget.dataset.link;
-        if (link) {
-            wx.downloadFile({
-                url: link, //仅为示例，并非真实的资源
-                success: function(res) {
-                    console.log(res);
-                    if (res.statusCode === 200) {
-                        innerAudioContext.autoplay = true
-                        innerAudioContext.src = res.tempFilePath,
-                        innerAudioContext.onPlay(() => {
-                            console.log('开始播放')
-                            _this.setData({isAudioPlay:true})
-                        })
-                        innerAudioContext.onStop((res) => {
-                            _this.setData({isAudioPlay:false})  
-                        })
-                        innerAudioContext.onEnded(() => {
-                            _this.setData({isAudioPlay:false})   
-                        })
-                    }
-                }
-            })
-        };
+        let _this = this;
+        let rIdx = e.currentTarget.dataset.rIdx;
+        let link = e.currentTarget.dataset.link;
+        if (!link) {return};
+        innerAudioContext.autoplay = true
+        innerAudioContext.src = link;
+    
+        innerAudioContext.onPlay(() => {
+            console.log('开始播放')
+            _this.setData({ recording:_this.data.recordList[rIdx] })
+        })
+        innerAudioContext.onStop((res) => {
+            _this.setData({ recording:null})
+        })
+        innerAudioContext.onEnded(() => {
+            _this.setData({ recording:null})
+        })           
+        innerAudioContext.onPause(() => {
+            _this.setData({ recording:null})
+        })
+    },
+    // 暂停播放
+    pauseAudio: function(){
+        let _this = this;
+        innerAudioContext.stop();
+        _this.setData({ recording:null})
     },
     /**
     * 生命周期函数--监听页面隐藏

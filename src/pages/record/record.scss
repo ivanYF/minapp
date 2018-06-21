@@ -48,8 +48,10 @@
 					float: left;
 				}
 				&.btn{
+					line-height: 100rpx;
 					display: inline-block;
 					float: right;
+					padding: 0 20rpx;
 				}
 			}
 		}

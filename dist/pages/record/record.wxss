@@ -44,5 +44,7 @@
           display: inline-block;
           float: left; }
         .container .record-list .record-item span.btn {
+          line-height: 100rpx;
           display: inline-block;
-          float: right; }
+          float: right;
+          padding: 0 20rpx; }
