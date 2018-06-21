@@ -15,7 +15,7 @@
 	<div class="record-list" wx:if="{{recordList && recordList.length}}">
 		<div class="record-item" wx:for="{{recordList}}" wx:for-item="rItme" wx:for-index="rIdx" wx:key="index">
 			<span class="time" wx:if="{{rItme.time}}">{{rItme.time}} "s</span>
-			<span class="btn" bindtap="playAudio" data-link="{{rItme.link}}" data-rIdx="{{rIdx}}" wx:if="{{rItme.link != recording.link}}">点击播放</span>
+			<span class="btn" bindtap="playAudio" data-link="{{rItme.link}}" data-ridx="{{rIdx}}" wx:if="{{rItme.link != recording.link}}">点击播放</span>
 			<span class="btn" bindtap="pauseAudio" data-rIdx="{{rIdx}}" wx:else>点击暂停</span>
 		</div>
 	</div>

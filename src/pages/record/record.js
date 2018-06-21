@@ -14,7 +14,10 @@ Page({
         recordList:[],
         timeNub: 0,    // 录音时间
         recordStatus: 1,    // 1:开始录音 2:录音中 3:录音完成
-        recording: null,
+        recording: {
+            title:'',
+            link:'',
+        },
     },
 
     /**
@@ -107,31 +110,56 @@ Page({
     //播放声音
     playAudio: function (e) {
         let _this = this;
-        let rIdx = e.currentTarget.dataset.rIdx;
+        let rIdx = e.currentTarget.dataset.ridx;
         let link = e.currentTarget.dataset.link;
         if (!link) {return};
+
         innerAudioContext.autoplay = true
         innerAudioContext.src = link;
-    
+        console.log(link);
+        console.log(rIdx);
         innerAudioContext.onPlay(() => {
             console.log('开始播放')
+            console.log(rIdx);
+            console.log(_this.data.recordList[rIdx]);
             _this.setData({ recording:_this.data.recordList[rIdx] })
         })
+
         innerAudioContext.onStop((res) => {
-            _this.setData({ recording:null})
+            console.log(res);
         })
         innerAudioContext.onEnded(() => {
-            _this.setData({ recording:null})
-        })           
-        innerAudioContext.onPause(() => {
-            _this.setData({ recording:null})
+            
         })
+
+        /**
+         * 如链接为私人服务器
+         * 需要download到本地 播放 操作如下
+         */
+        /**
+        wx.downloadFile({
+            url: link, //仅为示例，并非真实的资源
+            success: function(res) {
+                console.log(res);
+                if (res.statusCode === 200) {
+                    innerAudioContext.autoplay = true
+                    innerAudioContext.src = res.tempFilePath;
+                    innerAudioContext.onPlay(() => {
+                        console.log('开始播放')
+                    })
+                }
+            }
+        })
+        **/
+
+
     },
     // 暂停播放
     pauseAudio: function(){
         let _this = this;
         innerAudioContext.stop();
         _this.setData({ recording:null})
+        console.log(_this.data.recording);
     },
     /**
     * 生命周期函数--监听页面隐藏

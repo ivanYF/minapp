@@ -27,7 +27,8 @@
         top: 0; }
   .container .record-list {
     width: 100%;
-    display: inline-block; }
+    display: inline-block;
+    font-size: 0; }
     .container .record-list .record-item {
       width: 100%;
       display: inline-block;
@@ -37,7 +38,8 @@
       padding: 0 30rpx;
       line-height: 100rpx;
       color: #fff;
-      background: #35495e; }
+      background: #35495e;
+      margin-bottom: 30rpx; }
       .container .record-list .record-item span {
         font-size: 30rpx; }
         .container .record-list .record-item span.time {
