@@ -1,0 +1,24 @@
+.container {
+  font-size: 0; }
+
+.waterfall-load {
+  width: 100%;
+  overflow: hidden;
+  height: 0; }
+  .waterfall-load .waterfall-load-content {
+    height: 0; }
+
+.waterfall-wrap {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 0 10rpx; }
+  .waterfall-wrap .waterfall-item {
+    width: 50%;
+    display: inline-block;
+    padding: 0 10rpx 20rpx 10rpx;
+    box-sizing: border-box; }
+    .waterfall-wrap .waterfall-item:first-child {
+      border: 1px solid #000; }
+    .waterfall-wrap .waterfall-item:last-child {
+      border: 1px solid #f00; }

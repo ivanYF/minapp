@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/demo/demo",
-        "pages/record/record"
+        "pages/record/record",
+        "pages/waterfall/waterfall"
     ],
     "window": {
         // 类型：HexColor；默认值：#000000
