@@ -10,7 +10,7 @@ Page({
     */
     data: {
         title: 'waterfall',
-        loadImgSrcList: '', // 预加载 src
+        loadImgSrcList: [], // 预加载 src
         flData: {
             fHeight: 0, // 左边容器的高度
             imgList: [] // 左边容器的图片集合
@@ -21,7 +21,9 @@ Page({
         },
         screenWidth: 0, // 屏幕宽度
         paddingWidth: 20, // 图片左右边距
-        imgWidth: 0 // 图片的实际宽度
+        imgWidth: 0, // 图片的实际宽度
+        imgListLength: 0, // 图片数组的个数
+        imgLoadedCount: 0 // 图片加载完成的个数
     },
 
     /**
@@ -52,9 +54,8 @@ Page({
 
 
     imgOnLoad: function imgOnLoad(e) {
-        console.log("222222");
-        console.log(e);
         var _this = this;
+
         var link = e.currentTarget.dataset.link;
         var imgWidth = _this.data.imgWidth;
         var realWidth = e.detail.width;
@@ -66,16 +67,11 @@ Page({
         var flData = _this.data.flData;
         var frData = _this.data.frData;
 
-        console.log(flData.fHeight);
-        console.log(frData.fHeight);
-
-        // return
         // 对比左右轨道
         if (flData.fHeight <= frData.fHeight) {
             // 加入右边
             flData.imgList.push(link);
             flData.fHeight = flData.fHeight + imgHeight;
-
             _this.setData({ flData: flData });
         } else {
             // 加入左边
@@ -84,6 +80,19 @@ Page({
 
             _this.setData({ frData: frData });
         }
+
+        // 统计是否全部计算完成 然后清空
+        if (_this.data.imgLoadedCount == _this.data.imgListLength - 1) {
+            _this.setData({
+                imgLoadedCount: 0,
+                loadImgSrcList: []
+            });
+        } else {
+            var num = _this.data.imgLoadedCount + 1;
+            _this.setData({
+                imgLoadedCount: num
+            });
+        }
     },
     /**
      * [getImgList 获取图片数据]
@@ -91,15 +100,32 @@ Page({
      */
     getImgList: function getImgList() {
         var _this = this;
-        var imgList = ['../../images/pbl/timg1.jpeg', '../../images/pbl/timg2.jpeg', '../../images/pbl/timg3.jpeg', '../../images/pbl/timg4.jpeg', '../../images/pbl/timg5.jpeg', '../../images/pbl/timg6.jpeg', '../../images/pbl/timg3.jpeg', '../../images/pbl/timg4.jpeg', '../../images/pbl/timg2.jpeg', '../../images/pbl/timg6.jpeg', '../../images/pbl/timg1.jpeg', '../../images/pbl/timg5.jpeg'];
 
-        var newImgList = [];
-        if (_this.data.loadImgSrcList.length) {
-            newImgList = newImgList.concat(imgList);
-        } else {
-            newImgList = imgList;
-        }
-        _this.setData({ loadImgSrcList: newImgList });
+        //load完成加载下一页
+        if (_this.data.imgLoadedCount) {
+            return;
+        };
+
+        var imgList = ['../../images/pbl/timg1.jpeg', '../../images/pbl/timg2.jpeg', '../../images/pbl/timg3.jpeg', '../../images/pbl/timg4.jpeg', '../../images/pbl/timg5.jpeg', '../../images/pbl/timg6.jpeg', '../../images/pbl/timg1.jpeg', '../../images/pbl/timg2.jpeg', '../../images/pbl/timg3.jpeg', '../../images/pbl/timg4.jpeg', '../../images/pbl/timg5.jpeg', '../../images/pbl/timg6.jpeg'];
+
+        // 逐渐插入 形成插入动画
+        for (var i = 0; i < imgList.length; i++) {
+            (function (i) {
+                setTimeout(function (time) {
+                    var newpic = _this.data.loadImgSrcList;
+                    newpic.push(imgList[i]);
+                    _this.setData({ loadImgSrcList: newpic });
+                }, (i + 1) * 50);
+            })(i);
+        };
+
+        _this.setData({
+            imgListLength: imgList.length
+        });
+    },
+    onReachBottom: function onReachBottom() {
+        console.log("=======more=========");
+        this.getImgList();
     },
     /**
     * 生命周期函数--监听页面隐藏

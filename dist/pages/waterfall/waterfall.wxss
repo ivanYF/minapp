@@ -12,13 +12,15 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  padding: 0 10rpx; }
+  padding: 20rpx 10rpx; }
   .waterfall-wrap .waterfall-item {
     width: 50%;
     display: inline-block;
-    padding: 0 10rpx 20rpx 10rpx;
-    box-sizing: border-box; }
-    .waterfall-wrap .waterfall-item:first-child {
-      border: 1px solid #000; }
-    .waterfall-wrap .waterfall-item:last-child {
-      border: 1px solid #f00; }
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    font-size: 0;
+    float: left; }
+    .waterfall-wrap .waterfall-item .img {
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 20rpx; }

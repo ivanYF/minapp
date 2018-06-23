@@ -15,17 +15,18 @@
 	width: 100%;
 	overflow:hidden;
 	box-sizing:border-box;
-	padding: 0 10rpx;
+	padding: 20rpx 10rpx;
 	.waterfall-item{
 		width: 50%;
 		display: inline-block;
-		padding: 0 10rpx 20rpx 10rpx;
+		padding: 0 10rpx;
 		box-sizing:border-box;
-		&:first-child{
-			border: 1px solid #000;
-		}
-		&:last-child{
-			border: 1px solid #f00;
+		font-size: 0;
+		float: left;
+		.img{
+			width: 100%;
+			display: inline-block;
+			margin-bottom: 20rpx;
 		}
 	}
 }
