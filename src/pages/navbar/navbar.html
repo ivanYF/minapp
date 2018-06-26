@@ -1,0 +1,10 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+	<scroll-view class="navBar-vertical-box" scroll-y="true" scroll-with-animation="true" scroll-top="{{scrollT}}" bindscroll="scrollFun">
+	    <view class="cate-item {{curIndex == index ? 'active':''}}" wx:for="{{category}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCategory">
+	        {{item.name}}
+	    </view>
+	</scroll-view>
+	<!-- 内容 -->
+	<view class="content-wrap">文本内容的展示区域</view>
+</view>

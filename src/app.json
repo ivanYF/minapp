@@ -4,7 +4,8 @@
         "pages/demo/demo",
         "pages/record/record",
         "pages/waterfall/waterfall",
-        "pages/linkage/linkage"
+        "pages/linkage/linkage",
+        "pages/navbar/navbar"
     ],
     "window": {
         // 类型：HexColor；默认值：#000000

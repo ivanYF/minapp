@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -55,6 +55,12 @@
 					"id": -1,
 					"name": "三级联动",
 					"pathName": "pages/linkage/linkage",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "竖直导航",
+					"pathName": "pages/navbar/navbar",
 					"query": ""
 				}
 			]
