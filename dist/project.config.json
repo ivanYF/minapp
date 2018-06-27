@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -62,6 +62,11 @@
 					"name": "竖直导航",
 					"pathName": "pages/navbar/navbar",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "当前位置",
+					"pathName": "pages/mappage/mappage"
 				}
 			]
 		}
