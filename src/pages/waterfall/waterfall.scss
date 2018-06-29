@@ -27,6 +27,12 @@
 			width: 100%;
 			display: inline-block;
 			margin-bottom: 20rpx;
+			transition: transform 0.3 ease-in;
+			-webkit-transition: transform 0.3 ease-in;
+			&:active{
+				transform:scale(0.95,0.95);
+				-webkit-transform:scale(0.95,0.95);
+			}
 		}
 	}
 }

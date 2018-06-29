@@ -14,5 +14,7 @@
 		<navigator class="module-item" url="../waterfall/waterfall" hover-class="navigator-hover">瀑布流</navigator>
 		<!-- 地址选择 -->
 		<navigator class="module-item" url="../linkage/linkage" hover-class="navigator-hover">地址选择</navigator>
+		<!-- 当前位置 -->
+		<navigator class="module-item" url="../mappage/mappage" hover-class="navigator-hover">当前位置</navigator>
 	</view>
 </view>
