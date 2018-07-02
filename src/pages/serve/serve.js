@@ -120,58 +120,42 @@ Page({
     upper:function(){
         console.log("滚动到顶部");
     },
-
+    
     lower:function(){
         console.log("滚动到底部");
         var list = this.data.itemList;
         var newList = [
             {
                 id:111,
-                text:'我是新增加的内容'
+                text:'我们分担寒潮、风雷、霹雳'
             },
             {
                 id:111,
-                text:'我是新增加的内容'
+                text:'我们共享雾霭、流岚、虹霓'
             },
             {
                 id:111,
-                text:'我是新增加的内容'
+                text:'仿佛永远分离'
             },
             {
                 id:111,
-                text:'我是新增加的内容'
+                text:'却又终身相依'
             },
             {
                 id:111,
-                text:'我是新增加的内容'
+                text:'这才是伟大的爱情'
             },
             {
                 id:111,
-                text:'我是新增加的内容'
+                text:'坚贞就在这里'
             },
             {
                 id:111,
-                text:'我是新增加的内容'
+                text:'爱'
             },
             {
                 id:111,
-                text:'我是新增加的内容'
-            },
-            {
-                id:111,
-                text:'我是新增加的内容'
-            },
-            {
-                id:111,
-                text:'我是新增加的内容'
-            },
-            {
-                id:111,
-                text:'我是新增加的内容'
-            },
-            {
-                id:111,
-                text:'我是新增加的内容'
+                text:'足下的土地'
             },
         ]
         list = newList.concat(list);
