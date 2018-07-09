@@ -18,5 +18,6 @@
 		<navigator class="module-item" url="../mappage/mappage" hover-class="navigator-hover">当前位置</navigator>
 		<!-- 上拉分频 -->
 		<navigator class="module-item" url="../serve/serve" hover-class="navigator-hover">上拉分屏</navigator>
+		<navigator class="module-item" url="../video/video" hover-class="navigator-hover">视频操作</navigator>
 	</view>
 </view>
