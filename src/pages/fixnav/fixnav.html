@@ -1,0 +1,11 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+ 	<view class="navbar">
+ 		<view class="list" wx:for="{{category}}" wx:key="idx" wx:for-item="cList" wx:for-index="idx">
+ 			<span class="item" wx:for="{{cList}}"  wx:key="index" data-idx="{{index}}">{{item.name}}</span>	
+ 		</view>
+ 	</view>
+ 	<view class="content">
+ 		
+ 	</view>
+</view>
