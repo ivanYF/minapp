@@ -106,6 +106,9 @@ Page({
                 id:24,
             }]
         ],
+        popList:[],
+        navBottom:0,
+        showPopNav:false,
     },
 
     /**
@@ -119,16 +122,39 @@ Page({
     * 生命周期函数--监听页面初次渲染完成
     */
     onReady () {
-    // TODO: onReady
+        var popList = [];
+        this.data.category.forEach(function(pList,idx){
+            if (pList && pList.length) {
+                pList.forEach(function(pItem,pidx){
+                    popList.push(pItem)
+                })
+            };
+        })
+        this.setData({ popList:popList })
     },
 
     /**
     * 生命周期函数--监听页面显示
     */
     onShow () {
-    // TODO: onShow
+        var _this = this;
+        wx.createSelectorQuery().selectAll('#navBar').boundingClientRect(function(rects){
+            if (rects && rects[0] && rects[0].bottom) {
+                _this.setData({ navBottom:rects[0].bottom })
+            };
+        }).exec()
     },
-
+    viewScroll:function(e){
+        var offsetTop = e.detail.scrollTop;
+        if (offsetTop >= this.data.navBottom && !this.data.showPopNav) {
+            this.setData({ showPopNav:true })
+            console.log("显示11111111");
+        }
+        if (offsetTop < this.data.navBottom && this.data.showPopNav){
+            this.setData({ showPopNav:false })
+            console.log("隐藏2222222");
+        }
+    },
     /**
     * 生命周期函数--监听页面隐藏
     */

@@ -1,11 +1,15 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
-<view class="container">
- 	<view class="navbar">
+
+<scroll-view class="container" bindscroll="viewScroll" scroll-y="true">
+ 	<view class="navbar" id="navBar">
  		<view class="list" wx:for="{{category}}" wx:key="idx" wx:for-item="cList" wx:for-index="idx">
  			<span class="item" wx:for="{{cList}}"  wx:key="index" data-idx="{{index}}">{{item.name}}</span>	
  		</view>
  	</view>
+ 	<scroll-view class="pop-nav" bindscroll="popScroll" scroll-x="true">
+ 		<view class="pop-item" wx:for="{{popList}}" wx:key="idx" wx:for-item="pItem" wx:for-index="idx">{{pItem.name}}</view>
+ 	</scroll-view >
  	<view class="content">
  		
  	</view>
-</view>
+</scroll-view>
