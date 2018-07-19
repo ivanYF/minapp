@@ -85,7 +85,9 @@ Page({
         }]],
         popList: [],
         navBottom: 0,
-        showPopNav: false
+        showPopNav: false,
+        activeId: 1,
+        hidePop: false
     },
 
     /**
@@ -126,6 +128,7 @@ Page({
 
     viewScroll: function viewScroll(e) {
         var offsetTop = e.detail.scrollTop;
+
         if (offsetTop >= this.data.navBottom && !this.data.showPopNav) {
             this.setData({ showPopNav: true });
             console.log("显示11111111");
@@ -133,6 +136,12 @@ Page({
         if (offsetTop < this.data.navBottom && this.data.showPopNav) {
             this.setData({ showPopNav: false });
             console.log("隐藏2222222");
+        }
+
+        if (offsetTop < this.data.navBottom) {
+            this.setData({ hidePop: true });
+        } else {
+            this.setData({ hidePop: false });
         }
     },
     /**
