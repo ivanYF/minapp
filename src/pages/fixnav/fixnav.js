@@ -164,6 +164,16 @@ Page({
             this.setData({ hidePop: false})
         }
     },
+    modifyNavItem:function(e){
+        var _this = this;
+        var id = e.currentTarget.dataset.id; 
+
+        if (id != _this.data.activeId ) {
+            // 切换 index
+            _this.setData({ activeId:id })
+            console.log("load new data");
+        };
+    },
     /**
     * 生命周期函数--监听页面隐藏
     */
