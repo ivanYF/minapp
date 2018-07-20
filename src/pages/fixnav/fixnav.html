@@ -6,8 +6,8 @@
  			<span class="item {{activeId == item.id ? 'active' : ''}}" wx:for="{{cList}}"  wx:key="index" bindtap="modifyNavItem" data-id="{{item.id}}">{{item.name}}</span>	
  		</view>
  	</view>
- 	<scroll-view class="pop-nav {{showPopNav ? 'show' : ''}}" bindscroll="popScroll" scroll-x="true">
- 		<view class="pop-item {{activeId == pItem.id ? 'active' : ''}}" wx:for="{{popList}}" wx:key="idx" wx:for-item="pItem" wx:for-index="idx" bindtap="modifyNavItem" data-id="{{pItem.id}}">{{pItem.name}}</view>
+ 	<scroll-view class="pop-nav {{showPopNav ? 'show' : ''}}" bindscroll="popScroll" scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollL}}">
+ 		<view class="pop-item {{activeId == pItem.id ? 'active' : ''}}" wx:for="{{popList}}" wx:key="idx" wx:for-item="pItem" wx:for-index="idx" bindtap="modifyNavItem" data-id="{{pItem.id}}" >{{pItem.name}}</view>
  	</scroll-view >
  	<view class="content">
  		

@@ -49,15 +49,15 @@
     .container .pop-nav .pop-item {
       display: inline-block;
       font-size: 32rpx;
-      padding: 0 5rpx;
-      margin: 0 15rpx;
+      width: 110rpx;
+      text-align: center;
       line-height: 80rpx;
       position: relative; }
       .container .pop-nav .pop-item.active:after {
-        width: 100%;
         position: absolute;
         bottom: 3rpx;
-        left: 0;
+        left: 15rpx;
+        right: 15rpx;
         content: '';
         height: 4rpx;
         background: #f00; }

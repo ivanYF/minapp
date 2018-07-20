@@ -111,6 +111,9 @@ Page({
         showPopNav:false,
         activeId:1,
         hidePop:false,
+        wWidth: 0,
+        itemW:0,
+        scrollL:0,
     },
 
     /**
@@ -140,6 +143,15 @@ Page({
     */
     onShow () {
         var _this = this;
+        let wData = wx.getSystemInfoSync();
+        console.log(wData);
+        let itemW = (wData.windowWidth/375)*55;
+
+        _this.setData({ 
+            wWidth:wData.windowWidth,
+            itemW: itemW //每个点击元素的大小
+        })
+
         wx.createSelectorQuery().selectAll('#navBar').boundingClientRect(function(rects){
             if (rects && rects[0] && rects[0].bottom) {
                 _this.setData({ navBottom:rects[0].bottom })
@@ -172,8 +184,16 @@ Page({
             // 切换 index
             _this.setData({ activeId:id })
             console.log("load new data");
+
+            console.log(_this.data.itemW);
+            var scrollL = 0;
+            if (id) {
+                scrollL = _this.data.itemW * id - _this.data.wWidth/2 - 20;
+            };
+            _this.setData({ scrollL:scrollL })
         };
     },
+
     /**
     * 生命周期函数--监听页面隐藏
     */
