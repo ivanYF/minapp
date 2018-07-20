@@ -18,6 +18,9 @@
 		<navigator class="module-item" url="../mappage/mappage" hover-class="navigator-hover">当前位置</navigator>
 		<!-- 上拉分频 -->
 		<navigator class="module-item" url="../serve/serve" hover-class="navigator-hover">上拉分屏</navigator>
+		<!-- 视频操作 -->
 		<navigator class="module-item" url="../video/video" hover-class="navigator-hover">视频操作</navigator>
+		<!-- 自动悬浮 定位 -->
+		<navigator class="module-item" url="../fixnav/fixnav" hover-class="navigator-hover">导航悬浮</navigator>
 	</view>
 </view>
