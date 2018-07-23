@@ -73,8 +73,6 @@ Page({
     },
     // 角度小于 30 往左滑动 触发为 true  反之 false
     touchmove: function (e) {
-        console.log("------");
-        console.log(e);
         var _this = this,
             index = e.currentTarget.dataset.index,//当前索引
             startX = _this.data.startX,//开始X坐标
@@ -100,7 +98,8 @@ Page({
     angle: function (start, end) {
         var _X = end.X - start.X,
             _Y = end.Y - start.Y;
-        //返回角度 /Math.atan()返回数字的反正切值
+        // Math.atan 返回 反正切值 
+        // 返回角度 Math.atan()返回数字的反正切值
         return 360 * Math.atan(_Y / _X) / (2 * Math.PI);
     },
     /**
