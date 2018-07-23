@@ -9,7 +9,8 @@
         "pages/mappage/mappage",
         "pages/serve/serve",
         "pages/video/video",
-        "pages/fixnav/fixnav"
+        "pages/fixnav/fixnav",
+        "pages/listdelete/listdelete"
     ],
     "window": {
         // 类型：HexColor；默认值：#000000
