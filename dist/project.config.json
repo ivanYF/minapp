@@ -90,7 +90,8 @@
 				{
 					"id": -1,
 					"name": "左滑删除",
-					"pathName": "pages/listdelete/listdelete"
+					"pathName": "pages/listdelete/listdelete",
+					"query": ""
 				}
 			]
 		}

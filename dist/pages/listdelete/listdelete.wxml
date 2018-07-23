@@ -1,4 +1,7 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
 <view class="container">
-  <text class="title">{{ title }}</text>
+	<view class="touch-item {{ item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" bindtap="changeActive" wx:key="">
+		<view class="value">{{item.val}}</view>
+		<view class="del" catchtap="del" data-index="{{index}}">删除</view>
+	</view>
 </view>
