@@ -10,7 +10,8 @@
         "pages/serve/serve",
         "pages/video/video",
         "pages/fixnav/fixnav",
-        "pages/listdelete/listdelete"
+        "pages/listdelete/listdelete",
+        "pages/audiohandel/audiohandel"
     ],
     "window": {
         // 类型：HexColor；默认值：#000000
