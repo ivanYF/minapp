@@ -18,9 +18,13 @@ Page({
         }
     },
     onReady: function (e) {
+        console.log("onReady ----------");
         // 使用 wx.createAudioContext 获取 audio 上下文 context
         this.audioCtx = wx.createAudioContext('myAudio');
         console.log(this.audioCtx);
+    },
+    onShow:function(){
+        console.log("show------------");
     },
     audioPlayed: function (e) {
         console.log('audio is played')
@@ -68,14 +72,6 @@ Page({
     */
     onLoad () {
         // TODO: onLoad
-    },
-
-
-    /**
-    * 生命周期函数--监听页面显示
-    */
-    onShow () {
-    // TODO: onShow
     },
 
     /**
