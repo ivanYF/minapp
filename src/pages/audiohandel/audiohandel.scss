@@ -1,4 +1,44 @@
-.intro {
-  margin: 30px;
-  text-align: center;
+.container{
+	width: 100%;
+	display: inline-block;
+	box-sizing:border-box;
+	padding: 20rpx;
+	overflow: hidden;
+}
+.audio-wrap{
+	width: 100%;
+	display: inline-block;
+	border: 1rpx solid #ccc;
+	overflow: hidden;
+	box-sizing:border-box;
+	padding: 15rpx 25rpx;
+	border-radius: 6rpx;
+	background-color: #eee;
+	.audio-load{
+		width: 100%;
+		display: flex;
+		align-items:center;
+		justify-content: space-between;
+		font-size: 0;
+		.btn{
+			width: 100rpx;
+			display: inline-block;
+			overflow: hidden;
+			.btn-tag{
+				width: 80rpx;
+				height: 80rpx;
+				display: inline-block;
+			}
+		}
+		.line{
+			flex:1;
+			overflow: hidden;
+		}
+		.time{
+			font-size: 26rpx;
+			color: #666;
+			width: 80rpx;
+			text-align: right;
+		}
+	}
 }
