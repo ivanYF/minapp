@@ -1,5 +1,7 @@
 'use strict';
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 // 获取全局应用程序实例对象
 // const app = getApp()
 
@@ -10,13 +12,11 @@ Page({
     */
     data: {
         current: {
-            poster: 'http://y.gtimg.cn/music/photo_new/T002R300x300M000003rsKF44GyaSk.jpg?max_age=2592000',
-            name: '此时此刻',
-            author: '许巍',
-            src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46'
-        },
-        audioAction: {
-            method: 'pause'
+            src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+            sliderMax: 0, // 音屏的长度
+            audioStatus: 0, // 0未初始化  1 播放  2 暂停
+            playTime: '00:00', // 时间格式 为 00:00
+            curTime: 0
         }
     },
     onReady: function onReady(e) {
@@ -28,46 +28,45 @@ Page({
     onShow: function onShow() {
         console.log("show------------");
     },
-    audioPlayed: function audioPlayed(e) {
-        console.log('audio is played');
-    },
+
     audioTimeUpdated: function audioTimeUpdated(e) {
-        console.log(e);
-        this.duration = e.detail.duration;
+        var _setData2;
+
+        if (!this.data.current.sliderMax) {
+            var _setData;
+
+            wx.hideLoading();
+            this.setData((_setData = {}, _defineProperty(_setData, 'current.audioStatus', 1), _defineProperty(_setData, 'current.sliderMax', e.detail.duration), _setData));
+        }
+
+        /**
+         * 实时获取当前audio 播放位置
+         * 更新播放时间
+         * 更新slide 进度
+         */
+        var currentTime = Math.floor(e.detail.currentTime);
+        var playTime = (Math.floor(currentTime / 60) < 10 ? '0' + Math.floor(currentTime / 60) : Math.floor(currentTime / 60)) + ':' + (currentTime % 60 < 10 ? '0' + currentTime % 60 : currentTime % 60);
+
+        this.setData((_setData2 = {}, _defineProperty(_setData2, 'current.playTime', playTime), _defineProperty(_setData2, 'current.curTime', currentTime), _setData2));
     },
-    timeSliderChanged: function timeSliderChanged(e) {
-        console.log(e);
-        if (!this.duration) return;
-        var time = this.duration * e.detail.value / 100;
-        this.setData({
-            audioAction: {
-                method: 'setCurrentTime',
-                data: time
-            }
-        });
-    },
-    playbackRateSliderChanged: function playbackRateSliderChanged(e) {
-        this.setData({
-            audioAction: {
-                method: 'setPlaybackRate',
-                data: e.detail.value
-            }
-        });
+    sliderChange: function sliderChange(e) {
+        var time = e.detail.value;
+        this.audioCtx.seek(time);
     },
 
     playAudio: function playAudio() {
-        this.setData({
-            audioAction: {
-                method: 'play'
-            }
-        });
+        this.audioCtx.play();
+        // 未初始化时 显示 loading
+        if (!this.data.current.sliderMax) {
+            wx.showLoading({
+                mask: true
+            });
+        }
+        console.log(this.data.current.audioStatus);
     },
     pauseAudio: function pauseAudio() {
-        this.setData({
-            audioAction: {
-                method: 'pause'
-            }
-        });
+        this.audioCtx.pause();
+        this.setData(_defineProperty({}, 'current.audioStatus', 2));
     },
     /**
     * 生命周期函数--监听页面加载

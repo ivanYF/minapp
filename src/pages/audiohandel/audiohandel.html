@@ -1,17 +1,18 @@
 <view class="container">
+    <audio src="{{current.src}}" id="myAudio" bindtimeupdate="audioTimeUpdated"></audio>
     <div class="audio-wrap">
         <div class="audio-load">
-            <div class="btn">
-                <image class="btn-tag" mode="widthFix" src="../../images/tag-play.png"></image>
-            </div>            
+            <div class="btn" >
+                <image wx:if="{{current.audioStatus != 1}}" class="btn-tag" mode="widthFix" src="../../images/tag-play.png" bindtap="playAudio"></image>
+                <image wx:else class="btn-tag" mode="widthFix" src="../../images/tag-stop.png" bindtap="pauseAudio"></image>
+            </div>         
             <div class="line">
-                <slider disabled="true" bindchange="sliderChange" block-size="18" block-color="#f89828" backgroundColor="#ccc" activeColor="#f89828" step="5"/>
+                <slider bindchange="sliderChange" value="{{current.curTime}}" block-size="14" block-color="#f89828" backgroundColor="#ccc" max="{{current.sliderMax}}" activeColor="#f89828" step="1"/>
             </div>
-            <div class="time">00:00</div>
+            <div class="time">{{current.playTime}}</div>
         </div>
         <div class="audio-info">
             <div class=""></div>
         </div>
     </div>
-    <navigator class="module-item" url="../listdelete/listdelete" hover-class="navigator-hover">滑动删除</navigator>
 </view>

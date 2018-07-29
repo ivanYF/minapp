@@ -4,6 +4,10 @@
 	box-sizing:border-box;
 	padding: 20rpx;
 	overflow: hidden;
+	#myAudio{
+		display: none;
+		overflow: hidden;
+	}
 }
 .audio-wrap{
 	width: 100%;
