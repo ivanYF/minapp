@@ -65,9 +65,6 @@ Page({
     */
     onLoad () {
         // console.dir(app.data)
-        app.getUserInfo()
-        .then(info => this.setData({ userInfo: info }))
-        .catch(console.info)
     },
     /**
     * 生命周期函数--监听页面初次渲染完成

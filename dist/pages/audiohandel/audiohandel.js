@@ -33,12 +33,9 @@ Page({
         var _setData2;
 
         if (!this.data.current.sliderMax) {
-            var _setData;
-
             wx.hideLoading();
-            this.setData((_setData = {}, _defineProperty(_setData, 'current.audioStatus', 1), _defineProperty(_setData, 'current.sliderMax', e.detail.duration), _setData));
+            this.setData(_defineProperty({}, 'current.sliderMax', e.detail.duration));
         }
-
         /**
          * 实时获取当前audio 播放位置
          * 更新播放时间
@@ -62,7 +59,7 @@ Page({
                 mask: true
             });
         }
-        console.log(this.data.current.audioStatus);
+        this.setData(_defineProperty({}, 'current.audioStatus', 1));
     },
     pauseAudio: function pauseAudio() {
         this.audioCtx.pause();

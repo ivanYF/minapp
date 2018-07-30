@@ -39,7 +39,7 @@ App({
       }).then(function (info) {
         return _this.data.userInfo = info;
       }).then(function (info) {
-        return resolve(info);
+        console.log(info);resolve(info);
       }).catch(function (error) {
         return console.error('failed to get user info, error: ' + error);
       });

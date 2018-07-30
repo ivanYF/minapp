@@ -54,12 +54,7 @@ Page({
     * 生命周期函数--监听页面加载
     */
     onLoad: function onLoad() {
-        var _this = this;
-
         // console.dir(app.data)
-        app.getUserInfo().then(function (info) {
-            return _this.setData({ userInfo: info });
-        }).catch(console.info);
     },
 
     /**

@@ -32,7 +32,7 @@ App({
         .then(() => wechat.getUserInfo())
         .then(res => res.userInfo)
         .then(info => (this.data.userInfo = info))
-        .then(info => resolve(info))
+        .then(info => { console.log(info);resolve(info) })
         .catch(error => console.error('failed to get user info, error: ' + error))
     })
   },

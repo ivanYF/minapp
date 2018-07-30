@@ -29,11 +29,9 @@ Page({
         if(!this.data.current.sliderMax){
             wx.hideLoading();
             this.setData({
-                ['current.audioStatus']:1,
                 ['current.sliderMax']:e.detail.duration
             })
         }
-
         /**
          * 实时获取当前audio 播放位置
          * 更新播放时间
@@ -61,7 +59,9 @@ Page({
                 mask:true,
             })
         }
-        console.log(this.data.current.audioStatus)
+        this.setData({
+            ['current.audioStatus']:1,
+        })
     },
     pauseAudio: function () {
         this.audioCtx.pause();
