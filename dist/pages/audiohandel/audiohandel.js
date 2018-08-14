@@ -1,7 +1,5 @@
 'use strict';
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 // 获取全局应用程序实例对象
 // const app = getApp()
 
@@ -12,20 +10,32 @@ Page({
     */
     data: {
         current: {
-            idx: -1,
             src: '',
             sliderMax: 0, // 音屏的长度
             audioStatus: 0, // 0未初始化  1 播放  2 暂停
             playTime: '00:00', // 时间格式 为 00:00
             curTime: 0
         },
-        list: [{ src: 'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3' }, { src: 'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3' }]
+        list: [{ src: 'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3' }, { src: 'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3' }],
+        audioList: [],
+        activeIndex: -1
     },
     onReady: function onReady(e) {
         console.log("onReady ----------");
         // 使用 wx.createAudioContext 获取 audio 上下文 context
         this.audioCtx = wx.createAudioContext('myAudio');
-        console.log(this.audioCtx);
+
+        var that = this;
+        var list = this.data.list;
+        var newList = this.data.audioList;
+        list.forEach(function (item, idx) {
+            var cItem = that.data.current;
+            cItem.src = item.src;
+            newList.push(cItem);
+        });
+
+        console.log(newList);
+        this.setData({ audioList: newList });
     },
     onShow: function onShow() {
         console.log("show------------");
@@ -34,11 +44,13 @@ Page({
         console.log(e);
     },
     audioTimeUpdated: function audioTimeUpdated(e) {
-        var _setData2;
-
-        if (!this.data.current.sliderMax) {
+        var that = this;
+        var list = JSON.parse(JSON.stringify(that.data.audioList));
+        var activeIndex = this.data.activeIndex;
+        if (!list[activeIndex].sliderMax) {
             wx.hideLoading();
-            this.setData(_defineProperty({}, 'current.sliderMax', e.detail.duration));
+            list[activeIndex].sliderMax = e.detail.duration;
+            this.setData({ audioList: list });
         }
         /**
          * 实时获取当前audio 播放位置
@@ -48,13 +60,18 @@ Page({
         var currentTime = Math.floor(e.detail.currentTime);
         var playTime = (Math.floor(currentTime / 60) < 10 ? '0' + Math.floor(currentTime / 60) : Math.floor(currentTime / 60)) + ':' + (currentTime % 60 < 10 ? '0' + currentTime % 60 : currentTime % 60);
 
-        this.setData((_setData2 = {}, _defineProperty(_setData2, 'current.playTime', playTime), _defineProperty(_setData2, 'current.curTime', currentTime), _setData2));
+        list[activeIndex].playTime = playTime;
+        list[activeIndex].curTime = currentTime;
 
-        if (e.detail.currentTime == this.data.current.sliderMax) {
-            var _setData3;
+        this.setData({ audioList: list });
 
+        if (e.detail.currentTime == list[activeIndex].sliderMax) {
             this.audioCtx.pause();
-            this.setData((_setData3 = {}, _defineProperty(_setData3, 'current.audioStatus', 2), _defineProperty(_setData3, 'current.curTime', 0), _defineProperty(_setData3, 'current.playTime', '00:00'), _setData3));
+
+            list[activeIndex].audioStatus = 2;
+            list[activeIndex].curTime = 0;
+            list[activeIndex].playTime = '00:00';
+            this.setData({ audioList: list });
         };
     },
     sliderChange: function sliderChange(e) {
@@ -62,19 +79,41 @@ Page({
         this.audioCtx.seek(time);
     },
 
-    playAudio: function playAudio() {
+    playAudio: function playAudio(e) {
+
+        var that = this;
+        var src = e.currentTarget.dataset.src;
+        var idx = e.currentTarget.dataset.idx;
+
+        var list = JSON.parse(JSON.stringify(that.data.audioList));
+
+        if (this.data.activeIndex != idx) {
+            this.setData({ activeIndex: idx });
+        };
+
         this.audioCtx.play();
         // 未初始化时 显示 loading
-        if (!this.data.current.sliderMax) {
+        if (!this.data.audioList[idx].sliderMax) {
             wx.showLoading({
                 mask: true
             });
         }
-        this.setData(_defineProperty({}, 'current.audioStatus', 1));
+
+        // 播放当前 暂停其他
+        for (var i = 0; i < list.length; i++) {
+            if (i != idx) {
+                list[i].audioStatus = 2;
+            };
+        };
+        list[idx].audioStatus = 1;
+        this.setData({ audioList: list });
     },
-    pauseAudio: function pauseAudio() {
+    pauseAudio: function pauseAudio(e) {
+        var idx = e.currentTarget.dataset.idx;
+        var list = this.data.audioList;
         this.audioCtx.pause();
-        this.setData(_defineProperty({}, 'current.audioStatus', 2));
+        list[idx].audioStatus = 2;
+        this.setData({ audioList: list });
     },
     /**
     * 生命周期函数--监听页面加载
