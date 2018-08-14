@@ -12,7 +12,7 @@ Page({
     */
     data: {
         current: {
-            src: 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E06DCBDC9AB7C49FD713D632D313AC4858BACB8DDD29067D3C601481D36E62053BF8DFEAF74C0A5CCFADD6471160CAF3E6A&fromtag=46',
+            src: 'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3',
             sliderMax: 0, // 音屏的长度
             audioStatus: 0, // 0未初始化  1 播放  2 暂停
             playTime: '00:00', // 时间格式 为 00:00
@@ -45,6 +45,13 @@ Page({
         var playTime = (Math.floor(currentTime / 60) < 10 ? '0' + Math.floor(currentTime / 60) : Math.floor(currentTime / 60)) + ':' + (currentTime % 60 < 10 ? '0' + currentTime % 60 : currentTime % 60);
 
         this.setData((_setData2 = {}, _defineProperty(_setData2, 'current.playTime', playTime), _defineProperty(_setData2, 'current.curTime', currentTime), _setData2));
+
+        if (e.detail.currentTime == this.data.current.sliderMax) {
+            var _setData3;
+
+            this.audioCtx.pause();
+            this.setData((_setData3 = {}, _defineProperty(_setData3, 'current.audioStatus', 2), _defineProperty(_setData3, 'current.curTime', 0), _defineProperty(_setData3, 'current.playTime', '00:00'), _setData3));
+        };
     },
     sliderChange: function sliderChange(e) {
         var time = e.detail.value;
