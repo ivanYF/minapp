@@ -8,12 +8,17 @@ Page({
     */
     data: {
         current: {
-            src: 'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3',
+            idx:-1,
+            src: '',
             sliderMax: 0, // 音屏的长度
             audioStatus: 0, // 0未初始化  1 播放  2 暂停
             playTime:'00:00', // 时间格式 为 00:00
             curTime:0,
         },
+        list:[
+        {src:'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3'},
+        {src:'https://wx.files.weiliangyuan.cn/audio/20180809112034FJI7IEvRThpz7cd4scDu3lSPbgyLXkIk.mp3'},
+        ]
     },
     onReady: function (e) {
         console.log("onReady ----------");
@@ -24,7 +29,9 @@ Page({
     onShow:function(){
         console.log("show------------");
     },
-
+    audioInit:function(e){
+        console.log(e);
+    },
     audioTimeUpdated: function (e) {
         if(!this.data.current.sliderMax){
             wx.hideLoading();

@@ -1,6 +1,6 @@
 <view class="container">
     <audio src="{{current.src}}" id="myAudio" bindtimeupdate="audioTimeUpdated"></audio>
-    <div class="audio-wrap">
+    <div class="audio-wrap" bindtap="audioInit" wx:for="{{list}}" wx:key="{{index}}" data-src="{{item.src}}" data-idx="{{index}}">
         <div class="audio-load">
             <div class="btn" >
                 <image wx:if="{{current.audioStatus != 1}}" class="btn-tag" mode="widthFix" src="../../images/tag-play.png" bindtap="playAudio"></image>
