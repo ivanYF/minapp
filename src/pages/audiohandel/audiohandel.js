@@ -92,29 +92,33 @@ Page({
 
         let list = JSON.parse(JSON.stringify(that.data.audioList));
 
-        if (this.data.activeIndex != idx) {
-            this.setData({ activeIndex:idx })    
+        if (that.data.activeIndex != idx) {
+            that.setData({ activeIndex:idx })    
         };
 
-        
-        this.audioCtx.seek(this.data.audioList[idx].curTime || 0);
+        // 渲染层渲染需要一定时间
+        // 采用延迟渲染
+        setTimeout(function(){
+            that.audioCtx.seek(that.data.audioList[idx].curTime || 0);
 
-        this.audioCtx.play();
-        // 未初始化时 显示 loading
-        if(!this.data.audioList[idx].sliderMax){
-            wx.showLoading({
-                mask:true,
-            })
-        }
+            that.audioCtx.play();
+            // 未初始化时 显示 loading
+            if(!that.data.audioList[idx].sliderMax){
+                wx.showLoading({
+                    mask:true,
+                })
+            }
 
-        // 播放当前 暂停其他
-        for (var i = 0; i < list.length; i++) {
-            if (i != idx) {
-                list[i].audioStatus = 2;
+            // 播放当前 暂停其他
+            for (var i = 0; i < list.length; i++) {
+                if (i != idx) {
+                    list[i].audioStatus = 2;
+                };
             };
-        };
-        list[idx].audioStatus = 1;
-        this.setData({ audioList:list })
+            list[idx].audioStatus = 1;
+            that.setData({ audioList:list })
+        },50)
+        // 采用延迟渲染 避免渲染层错误
     },
     pauseAudio: function (e) {
         let idx = e.currentTarget.dataset.idx;
