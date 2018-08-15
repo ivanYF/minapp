@@ -7,7 +7,7 @@
                 <image wx:else class="btn-tag" mode="widthFix" src="../../images/tag-stop.png" bindtap="pauseAudio" data-src="{{item.src}}" data-idx="{{index}}"></image>
             </div>         
             <div class="line">
-                <slider bindchange="sliderChange" value="{{item.curTime}}" block-size="14" block-color="#f89828" backgroundColor="#ccc" max="{{item.sliderMax}}" activeColor="#f89828" step="1"/>
+                <slider bindchange="sliderChange" value="{{item.curTime}}" block-size="14" block-color="#f89828" backgroundColor="#ccc" data-idx="{{index}}" max="{{item.sliderMax}}" activeColor="#f89828" step="1"/>
             </div>
             <div class="time">{{item.playTime}}</div>
         </div>

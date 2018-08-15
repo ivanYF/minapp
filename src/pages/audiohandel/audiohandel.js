@@ -79,7 +79,9 @@ Page({
     },
     sliderChange: function (e) {
         let time = e.detail.value;
-        this.audioCtx.seek(time)
+        console.log(e);
+        this.audioCtx.seek(time);
+        
     },
 
     playAudio: function (e) {
@@ -93,6 +95,9 @@ Page({
         if (this.data.activeIndex != idx) {
             this.setData({ activeIndex:idx })    
         };
+
+        
+        this.audioCtx.seek(this.data.audioList[idx].curTime || 0);
 
         this.audioCtx.play();
         // 未初始化时 显示 loading
