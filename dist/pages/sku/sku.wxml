@@ -1,0 +1,28 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+    <view class="sku-wrap">
+        <view class="prod-info">
+            <image class="pic"></image>
+            <view class="info">
+                <view class="price"></view>
+                <view class="stock"></view>
+                <view class="desc"></view>
+            </view>
+        </view>
+        <view class="sku-info">
+            <view class="sku-list">
+                <view class="sku-item">
+                    <view class="btn"></view>
+                </view>
+            </view>
+        </view>
+        <view class="nub-wrap">
+            <view class="name">购买数量</view>
+            <view class="btn-list">
+                <view class="btn-minus"></view>
+                <view class="nub">1</view>
+                <view class="btn-add"></view>
+            </view>
+        </view>
+    </view>
+</view>

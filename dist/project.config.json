@@ -1,0 +1,110 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.9",
+	"appid": "wxce9d6c04ea76bec4",
+	"projectname": "min-app-static",
+	"svr": "",
+	"client": "",
+	"qcloudRoot": "",
+	"miniprogramRoot": "",
+	"pluginRoot": "",
+	"scripts": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": -1,
+					"name": "录音",
+					"pathName": "pages/record/record",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "瀑布流",
+					"pathName": "pages/waterfall/waterfall",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "三级联动",
+					"pathName": "pages/linkage/linkage",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "竖直导航",
+					"pathName": "pages/navbar/navbar",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "当前位置",
+					"pathName": "pages/mappage/mappage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "客服",
+					"pathName": "pages/serve/serve",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "视频操作",
+					"pathName": "pages/video/video",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "伸缩导航",
+					"pathName": "pages/fixnav/fixnav",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "左滑删除",
+					"pathName": "pages/listdelete/listdelete",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "音频控件",
+					"pathName": "pages/audiohandel/audiohandel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "规格选择",
+					"pathName": "pages/sku/sku"
+				}
+			]
+		}
+	}
+}
