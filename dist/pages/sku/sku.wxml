@@ -4,15 +4,28 @@
         <view class="prod-info">
             <image class="pic"></image>
             <view class="info">
-                <view class="price"></view>
-                <view class="stock"></view>
-                <view class="desc"></view>
+                <view class="price">¥ 89</view>
+                <view class="stock">请选择 颜色 尺码</view>
+                <view class="desc">库存充足</view>
             </view>
         </view>
         <view class="sku-info">
-            <view class="sku-list">
+            <view class="sku-wp">
+                <view class="sku-name">颜色</view>
                 <view class="sku-item">
-                    <view class="btn"></view>
+                    <text class="btn">TLK(黑色)</text>
+                    <text class="btn">TLK(白色)</text>
+                </view>
+            </view>
+            <view class="sku-wp">
+                <view class="sku-name">尺码</view>
+                <view class="sku-item">
+                    <text class="btn">39码</text>
+                    <text class="btn">40码</text>
+                    <text class="btn">41码</text>
+                    <text class="btn">42码</text>
+                    <text class="btn">43码</text>
+                    <text class="btn">44码</text>
                 </view>
             </view>
         </view>
