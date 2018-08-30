@@ -11,9 +11,10 @@
 		display: inline-block;
 		.prod-info{
 			width: 100%;
-			padding: 30rpx;
+			padding: 20rpx;
 			background-color: #fff;
 			box-sizing: border-box;
+			display: flex;
 			.pic{
 				width: 200rpx;
 				height: 200rpx;
@@ -21,8 +22,33 @@
 				overflow: hidden;
 				box-sizing: border-box;
 				border: 1rpx solid #000;
-				transform: translate(0,-80rpx);
 				background: #ccc;
+				border-radius: 8rpx;
+				margin-top: -80rpx;
+			}
+			.info{
+				flex:1;
+				display: inline-block;
+				overflow: hidden;
+				margin-left: 20rpx;
+				.price{
+					display: inline-block;
+					width: 100%;
+					font-size: 36rpx;
+					color: #f28;
+				}
+				.stock{
+					display: inline-block;
+					width: 100%;
+					font-size: 28rpx;
+					color: #666;
+				}
+				.desc{
+					display: inline-block;
+					width: 100%;
+					font-size: 28rpx;
+					color: #666;
+				}
 			}
 		}
 	}
