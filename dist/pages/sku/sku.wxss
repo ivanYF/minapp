@@ -1,7 +1,8 @@
 .container {
   width: 100%;
   display: inline-block;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 0; }
   .container .sku-wrap {
     position: fixed;
     left: 0;
