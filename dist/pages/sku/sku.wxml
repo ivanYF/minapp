@@ -37,5 +37,8 @@
                 <view class="btn-add"></view>
             </view>
         </view>
+        <view class="btn-confirm">
+            <view class="btn">确定</view>
+        </view>
     </view>
 </view>
