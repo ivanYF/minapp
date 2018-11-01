@@ -25,6 +25,8 @@
 		<!-- 滑动删除 -->
 		<navigator class="module-item" url="../listdelete/listdelete" hover-class="navigator-hover">滑动删除</navigator>
 		<navigator class="module-item" url="../audiohandel/audiohandel" hover-class="navigator-hover">音频播放</navigator>
+
+		<navigator class="module-item" url="../reply/reply" hover-class="navigator-hover">当前页评论回复</navigator>
 		
 	</view>
 </view>

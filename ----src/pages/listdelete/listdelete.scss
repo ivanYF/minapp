@@ -1,0 +1,44 @@
+.container{
+	width: 100%;
+	font-size: 0;
+	overflow: hidden;
+	display: inline-block;
+	.touch-item{
+		display: flex;
+		justify-content: space-between;
+		align-items:center;
+		width: 100%;
+		background-color: #fff;
+		margin-top: 20rpx;
+		.value{
+			width: 100%;
+			box-sizing:border-box;
+			padding: 20rpx;
+			line-height: 32rpx;
+			font-size: 32rpx;
+			margin-right:0;
+			transition: all 0.4s;
+			transform: translateX(180rpx);
+			margin-left: -180rpx;
+			color: #000;
+		}
+		.del{
+			background-color: orangered;
+			width: 180rpx;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			transform: translateX(220rpx);
+			transition: all 0.4s;
+			font-size: 32rpx;
+			padding: 20rpx;
+		}
+		&.touch-move-active{
+			.value,.del{
+				transform: translateX(0);	
+			}
+		}
+	}
+}

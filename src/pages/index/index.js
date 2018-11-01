@@ -1,6 +1,8 @@
 // 获取全局应用程序实例对象
 const app = getApp()
 
+
+
 // 创建页面实例对象
 Page({
     /**
@@ -64,17 +66,26 @@ Page({
     * 生命周期函数--监听页面加载
     */
     onLoad () {
-        // console.dir(app.data)
+        
+        console.log('------------- index  onload ------ ')
+
+        wx.showLoading({
+            title:'index onload'
+        })
     },
     /**
     * 生命周期函数--监听页面初次渲染完成
     */
     onReady () {
+        console.log('------------- index  ready ------ ')
+        setTimeout(function(){
+            wx.hideLoading();
+        },2000)
     },
     /**
     * 生命周期函数--监听页面显示
     */
-    onShow () {
+    onShow (options) {
         let wData = wx.getSystemInfoSync();
         this.setData({ 
             wWidth:wData.windowWidth,

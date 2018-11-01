@@ -12,7 +12,8 @@
         "pages/fixnav/fixnav",
         "pages/listdelete/listdelete",
         "pages/audiohandel/audiohandel",
-        "pages/sku/sku"
+        "pages/reply/reply",
+        "pages/formid/formid"
     ],
     "window": {
         // 类型：HexColor；默认值：#000000

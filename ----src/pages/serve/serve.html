@@ -1,0 +1,9 @@
+<view class="container">
+	<scroll-view class="scroll-body" scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-with-animation="true" scroll-bottom="{{scrollBottom}}" lower-threshold="{{lowerBottom}}">
+		<view class="content">
+			<view class="item" wx:for="{{itemList}}" wx:key="{{index}}">
+				<view class="text {{ item.id > 50 ? 'fr' : ''}}">{{item.text}}</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

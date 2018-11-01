@@ -1,0 +1,14 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+	<view class="waterfall-load">
+		<image class="waterfall-load-content" wx:for="{{loadImgSrcList}}" wx:key="index" src="{{item}}" bindload="imgOnLoad" data-link="{{item}}"></image>
+	</view>
+	<view class="waterfall-wrap">
+		<view class="waterfall-item">
+			<image class="img" wx:for="{{flData.imgList}}" wx:for-item="lItem" wx:key="index" src="{{lItem}}" mode="widthFix"></image>
+		</view>
+		<view class="waterfall-item">
+			<image class="img" wx:for="{{frData.imgList}}" wx:for-item="rItem" wx:key="index" src="{{rItem}}" mode="widthFix"></image>
+		</view>
+	</view>
+</view>

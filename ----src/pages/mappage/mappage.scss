@@ -1,0 +1,61 @@
+@mixin arrow($length,$border, $color, $angle) {
+    content: '';
+    display: block;
+    position: absolute;
+    width: $length;
+    height: $length;
+    border-width: $border;
+    border-style: solid;
+    border-color: $color $color transparent transparent;
+    transform: translate(-50%, -50%) rotate($angle);
+    -moz-transform: translate(-50%, -50%) rotate($angle);
+    -ms-transform: translate(-50%, -50%) rotate($angle);
+    -webkit-transform: translate(-50%, -50%) rotate($angle);
+}
+
+.container{
+	width: 100%;
+	box-sizing:border-box;
+	padding:0 20rpx;
+	.btn-list{
+		width: 100%;
+		display: inline-block;
+		overflow:hidden;
+		position: relative;
+		margin-top: 30rpx;
+		.btn-getLoction{
+			width: 100%;
+			display: inline-block;
+			line-height: 60rpx;
+			font-size: 30rpx;
+			position: relative;
+			background: #35495e;
+			color: #fff;
+			box-sizing:border-box;
+			padding: 10rpx 20rpx;
+			border-radius: 6rpx;
+			&:after{
+				content: '';
+				position: absolute;
+				top:50%;
+				right: 20rpx;
+				@include arrow(20rpx,3rpx,#fff,45deg);
+			}
+		}
+		.btn-loction-button{
+			width: 100%;
+			position: absolute;
+			height: 100%;
+			left:0;
+			top:0;
+			opacity: 0;
+		}
+	}
+	.address{
+		width: 100%;
+		line-height: 80rpx;
+		height: 80rpx;
+		font-size: 30rpx;
+		color: #35495e;
+	}
+}

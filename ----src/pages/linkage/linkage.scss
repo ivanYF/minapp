@@ -1,0 +1,21 @@
+.container{
+	margin: 20rpx 30rpx;
+}
+.picker{
+	width: 100%;
+	display: flex;
+	display: -webkit-flex;
+	border-bottom: 2rpx solid #999;
+	box-sizing:border-box;
+	padding: 10rpx 0;
+	.name{
+		font-size: 28rpx;
+		color: #000;
+		width: 160rpx;
+	}
+	.value{
+		flex:1;
+		font-size: 28rpx;
+		color: #35495e;
+	}
+}

@@ -52,7 +52,11 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch: function onLaunch() {
-    console.log(' ========== Application is launched ========== ');
+    console.log('======= onLaunch == ivan =====');
+
+    // wx.navigateTo({
+    //     url: 'pages/reply/reply'
+    // })
   },
 
   /**

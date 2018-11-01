@@ -1,0 +1,38 @@
+.container{
+	font-size: 0;
+}
+
+.waterfall-load{
+	width: 100%;
+	overflow: hidden;
+	height: 0;
+	.waterfall-load-content{
+		height: 0;
+	}
+}
+
+.waterfall-wrap{
+	width: 100%;
+	overflow:hidden;
+	box-sizing:border-box;
+	padding: 20rpx 10rpx;
+	.waterfall-item{
+		width: 50%;
+		display: inline-block;
+		padding: 0 10rpx;
+		box-sizing:border-box;
+		font-size: 0;
+		float: left;
+		.img{
+			width: 100%;
+			display: inline-block;
+			margin-bottom: 20rpx;
+			transition: transform 0.3 ease-in;
+			-webkit-transition: transform 0.3 ease-in;
+			&:active{
+				transform:scale(0.95,0.95);
+				-webkit-transform:scale(0.95,0.95);
+			}
+		}
+	}
+}

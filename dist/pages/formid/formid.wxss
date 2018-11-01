@@ -1,0 +1,34 @@
+.container {
+  text-align: center; }
+
+.btn-button {
+  margin: 100rpx auto;
+  width: 500rpx;
+  display: inline-block;
+  overflow: hidden;
+  height: 100rpx;
+  font-size: 40rpx;
+  text-align: center;
+  background-color: #fff;
+  line-height: 100rpx;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  position: relative; }
+  .btn-button .btn {
+    width: 20rpx;
+    height: 20rpx;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible; }
+  .btn-button button::after {
+    border: none; }
+  .btn-button .aa {
+    width: 500rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 0;
+    left: 0; }

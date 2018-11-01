@@ -1,0 +1,8 @@
+<view class="container">
+	<picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{addressMulti}}">
+	    <view class="picker">
+	      <view class="name">选择地址：</view>
+	      <view class="value">{{addressMulti[0][multiIndex[0]]}}，{{addressMulti[1][multiIndex[1]]}}，{{addressMulti[2][multiIndex[2]]}}</view>
+	    </view>
+	</picker>
+</view>

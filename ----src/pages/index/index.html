@@ -1,0 +1,30 @@
+<view class="container">
+	<scroll-view class="navBar-box" scroll-x="true" scroll-with-animation="true" scroll-left="{{scrollL}}" bindscroll="scrollFun">
+	    <view class="cate-item {{curIndex == index ? 'active':''}}" wx:for="{{category}}" wx:key="{{item.id}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCategory">
+	        {{item.name}}
+	    </view>
+	</scroll-view>
+	
+	<view class="module-list">
+		<!-- 竖直导航 -->
+		<navigator class="module-item" url="../navbar/navbar" hover-class="navigator-hover">竖直导航</navigator>
+		<!-- 录音 -->
+		<navigator class="module-item" url="../record/record" hover-class="navigator-hover">录音</navigator>
+		<!-- 瀑布流 -->
+		<navigator class="module-item" url="../waterfall/waterfall" hover-class="navigator-hover">瀑布流</navigator>
+		<!-- 地址选择 -->
+		<navigator class="module-item" url="../linkage/linkage" hover-class="navigator-hover">地址选择</navigator>
+		<!-- 当前位置 -->
+		<navigator class="module-item" url="../mappage/mappage" hover-class="navigator-hover">当前位置</navigator>
+		<!-- 上拉分频 -->
+		<navigator class="module-item" url="../serve/serve" hover-class="navigator-hover">上拉分屏</navigator>
+		<!-- 视频操作 -->
+		<navigator class="module-item" url="../video/video" hover-class="navigator-hover">视频操作</navigator>
+		<!-- 自动悬浮 定位 -->
+		<navigator class="module-item" url="../fixnav/fixnav" hover-class="navigator-hover">导航悬浮</navigator>
+		<!-- 滑动删除 -->
+		<navigator class="module-item" url="../listdelete/listdelete" hover-class="navigator-hover">滑动删除</navigator>
+		<navigator class="module-item" url="../audiohandel/audiohandel" hover-class="navigator-hover">音频播放</navigator>
+		
+	</view>
+</view>

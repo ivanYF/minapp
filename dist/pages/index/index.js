@@ -54,18 +54,28 @@ Page({
     * 生命周期函数--监听页面加载
     */
     onLoad: function onLoad() {
-        // console.dir(app.data)
+
+        console.log('------------- index  onload ------ ');
+
+        wx.showLoading({
+            title: 'index onload'
+        });
     },
 
     /**
     * 生命周期函数--监听页面初次渲染完成
     */
-    onReady: function onReady() {},
+    onReady: function onReady() {
+        console.log('------------- index  ready ------ ');
+        setTimeout(function () {
+            wx.hideLoading();
+        }, 2000);
+    },
 
     /**
     * 生命周期函数--监听页面显示
     */
-    onShow: function onShow() {
+    onShow: function onShow(options) {
         var wData = wx.getSystemInfoSync();
         this.setData({
             wWidth: wData.windowWidth,

@@ -1,0 +1,18 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+	<view class="btn-button">
+		<text>确定</text>
+		<form bindsubmit="formSubmit2" report-submit="{{true}}">
+			<button formType="submit" class='btn'>
+				<view class='aa'>
+					<form bindsubmit="formSubmit" report-submit="{{true}}">
+						<button formType="submit" class='btn'>
+							<view class='aa'>
+							</view>
+						</button>
+					</form>
+				</view>
+			</button>
+		</form>
+	</view>
+</view>

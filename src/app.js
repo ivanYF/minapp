@@ -42,14 +42,21 @@ App({
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
    */
   onLaunch () {
-    console.log(' ========== Application is launched ========== ')
-  },
+      	console.log('======= onLaunch == ivan =====')
+
+		// wx.navigateTo({
+        //     url: 'pages/reply/reply'
+        // })
+      	
+  	},
   /**
    * 生命周期函数--监听小程序显示
    * 当小程序启动，或从后台进入前台显示，会触发 onShow
    */
   onShow () {
     console.log(' ========== Application is showed ========== ')
+
+	
   },
   /**
    * 生命周期函数--监听小程序隐藏

@@ -1,0 +1,14 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+	
+	<view class="btn-list">
+		<view bindtap="getLocation" class="btn-getLoction" >获取地理位置</view>
+		<button wx:if="{{showButton}}" class="btn-loction-button" open-type="openSetting">获取地理位置</button>
+	</view>
+
+	<view class="address">{{address}}</view>
+
+	<map id="myMap" wx:if="{{longitude && latitude}}" controls="true" longitude="{{longitude}}" latitude="{{latitude}}" show-location style=" margin-top:20px;width: 100%; height: 300px;"/>
+
+
+</view>

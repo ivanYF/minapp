@@ -1,0 +1,11 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+	<view class="video-wrap">
+		<!-- 采用 16/9比例 -->
+		<video id="myVideo" class="video-item" src="https://chihuo.files.nizaibulai.com/video/20180709061200vBRAV7b3S7WJADRKrR5tmOEBHEZpvw13.mp4" controls="true" hidden="{{!showVideo}}" show-play-btn="false" bindended="videoEnd"></video>
+		<view class="video-poster" wx:if="{{!showVideo}}">
+			<image class="poster-img" src="../../images/poster.png" mode="widthFix"></image>
+			<image class="play-video" bindtap="showVideo" src="../../images/play.jpeg" mode="widthFix"></image>
+		</view>
+	</view>
+</view>

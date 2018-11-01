@@ -1,0 +1,9 @@
+<!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
+<view class="container">
+	<view class="btn-send" bindtap="focusReply">发表评论</view>
+
+	<view class="send-val {{inputFocus ? 'show': ''}}">
+		<input class="input-val" type="text" cursor-spacing="30" bindblur="blurReply" confirm-type="send" bindconfirm="sendReply" focus="{{inputFocus}}" placeholder="评论回复" />
+		<view class="btn-save">确定</view>
+	</view>
+</view>
