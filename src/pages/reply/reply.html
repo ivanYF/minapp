@@ -1,9 +1,12 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
 <view class="container">
 	<view class="btn-send" bindtap="focusReply">发表评论</view>
-
+	<text class="value">{{textval}}</text>
+	<form bindsubmit="bindFormSubmit">
 	<view class="send-val {{inputFocus ? 'show': ''}}">
-		<input class="input-val" type="text" cursor-spacing="30" bindblur="blurReply" confirm-type="send" bindconfirm="sendReply" focus="{{inputFocus}}" placeholder="评论回复" />
-		<view class="btn-save">确定</view>
+		<!-- <input class="input-val" type="text" cursor-spacing="30" bindblur="blurReply" confirm-type="send" bindconfirm="sendReply" focus="{{inputFocus}}" placeholder="评论回复" /> -->
+		<textarea fixed name="textarea" class="input-val" type="text" cursor-spacing="30" show-confirm-bar=''  bindconfirm="sendReply" focus="{{inputFocus}}" auto-height placeholder="自动变高" />
+		<button class="btn-save" form-type="submit">确定</button>
 	</view>
+	</form>
 </view>

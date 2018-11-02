@@ -10,8 +10,8 @@ Page({
   */
 	data: {
 		title: 'reply',
-		inputFocus: false
-
+		inputFocus: true,
+		textval: ''
 	},
 
 	/**
@@ -39,7 +39,7 @@ Page({
 		var prevPage = pages[pages.length - 2];
 		console.log(pages);
 		console.log(prevPage);
-		prevPage.onLoad();
+		// prevPage.onLoad();
 		// wx.navigateBack({
 		// 	delta: 1
 		// })
@@ -50,6 +50,12 @@ Page({
 	},
 	blurReply: function blurReply() {
 		this.setData({ inputFocus: false });
+	},
+	bindFormSubmit: function bindFormSubmit(e) {
+		console.log(e);
+		this.setData({
+			'textval': e.detail.value.textarea
+		});
 	},
 
 	/**

@@ -8,8 +8,8 @@ Page({
 	 */
 	data: {
 		title: 'reply',
-		inputFocus: false,
-
+		inputFocus: true,
+		textval:'',
 	},
 
 	/**
@@ -35,7 +35,7 @@ Page({
 		var prevPage = pages[pages.length - 2];
         console.log(pages)
         console.log(prevPage)
-		prevPage.onLoad();
+		// prevPage.onLoad();
 			// wx.navigateBack({
 			// 	delta: 1
 			// })
@@ -46,6 +46,12 @@ Page({
 	},
 	blurReply (){
 		this.setData({ inputFocus:false })
+	},
+	bindFormSubmit(e){
+		console.log(e)
+		this.setData({
+			'textval':e.detail.value.textarea
+		}) 
 	},
 	/**
 	 * 生命周期函数--监听页面隐藏
