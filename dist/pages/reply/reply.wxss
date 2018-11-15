@@ -22,13 +22,15 @@ page {
   .send-val .input-val {
     display: inline-block;
     flex: 1;
-    line-height: 40rpx;
+    line-height: 30rpx;
+    padding: 0;
     font-size: 28rpx;
     border-radius: 6rpx;
-    padding-left: 10rpx;
     background-color: #f5f5f5;
-    padding: 20rpx 10rpx;
-    overflow: hidden; }
+    padding: 0 10rpx;
+    overflow: hidden;
+    margin: 0;
+    height: auto; }
   .send-val .btn-save {
     display: inline-block;
     width: 120rpx;
@@ -36,4 +38,9 @@ page {
     font-size: 28rpx;
     line-height: 60rpx;
     text-align: center;
-    background-color: #f5f5f5; }
+    background-color: #f00 !important;
+    border-radius: 4rpx;
+    border: none;
+    color: #fff; }
+    .send-val .btn-save::after {
+      border: none; }

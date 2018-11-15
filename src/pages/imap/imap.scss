@@ -1,0 +1,14 @@
+.page-section{
+	width: 100%;
+	height: 100%;
+	display: inline-block;
+	overflow: hidden;
+	.btn-search{
+		display: inline-block;
+		position: fixed;
+		width: 90%;
+		left: 5%;
+		top:40rpx;
+		overflow: hidden;
+	}
+}

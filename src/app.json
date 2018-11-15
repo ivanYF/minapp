@@ -13,7 +13,8 @@
         "pages/listdelete/listdelete",
         "pages/audiohandel/audiohandel",
         "pages/reply/reply",
-        "pages/formid/formid"
+        "pages/formid/formid",
+        "pages/imap/imap"
     ],
     "window": {
         // 类型：HexColor；默认值：#000000

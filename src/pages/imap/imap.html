@@ -1,0 +1,19 @@
+<view class="page-section page-section-gap">
+    <map 
+        id="myMap"
+        style="width: 100%; height: 100%;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        show-location>
+        <cover-view class="controls">
+            <cover-view class="btn-search" bindtap="play">
+                <cover-image class="img" src="../../images/map-search.png" />
+            </cover-view>
+            <!-- <cover-view class="pause" bindtap="pause">
+                <cover-image class="img" src="/path/to/icon_pause" />
+            </cover-view> -->
+            </cover-view>
+    </map>
+</view>
