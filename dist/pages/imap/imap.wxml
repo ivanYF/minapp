@@ -8,8 +8,10 @@
         covers="{{covers}}"
         scale="{{mapScale}}"
         show-location>
-        
-            <cover-view class="btn-search" bindtap="addScale">
+            <cover-view class="btn-open" bindtap="">
+                <button open-type="openSetting" bindopensetting="openSetting">获取当前位置</button>
+            </cover-view>
+            <cover-view class="btn-search" bindtap="gotosearch">
                 <cover-image class="img" src="../../images/map-search.png" />
             </cover-view>
             <cover-view class="btn-scale-low" bindtap="addScale">

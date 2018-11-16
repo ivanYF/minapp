@@ -14,6 +14,21 @@
       display: inline-block;
       width: 650rpx;
       height: 90rpx; }
+  .page-section .btn-open {
+    display: inline-block;
+    position: fixed;
+    width: 500rpx;
+    left: 125rpx;
+    bottom: 400rpx;
+    overflow: hidden; }
+    .page-section .btn-open button {
+      display: inline-block;
+      width: 500rpx;
+      line-height: 90rpx;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.6);
+      font-size: 30rpx;
+      text-align: center; }
   .page-section .btn-scale-low {
     display: inline-block;
     position: fixed;
