@@ -6,14 +6,24 @@
         longitude="{{longitude}}"
         markers="{{markers}}"
         covers="{{covers}}"
+        scale="{{mapScale}}"
         show-location>
-        <cover-view class="controls">
-            <cover-view class="btn-search" bindtap="play">
+        
+            <cover-view class="btn-search" bindtap="addScale">
                 <cover-image class="img" src="../../images/map-search.png" />
             </cover-view>
-            <!-- <cover-view class="pause" bindtap="pause">
-                <cover-image class="img" src="/path/to/icon_pause" />
-            </cover-view> -->
+            <cover-view class="btn-scale-low" bindtap="addScale">
+                <cover-image class="img" src="../../images/btn-map-1.png" />
             </cover-view>
+            <cover-view class="btn-scale-up" bindtap="minuScale">
+                <cover-image class="img" src="../../images/btn-map-2.png" />
+            </cover-view>
+            <cover-view class="btn-view-one" bindtap="updateMsg">
+                <cover-image class="img" src="../../images/btn-map-3.png" />
+            </cover-view>
+            <cover-view class="btn-view-two" bindtap="updataLocation">
+                <cover-image class="img" src="../../images/btn-map-4.png" />
+            </cover-view>
+        <!-- </cover-view> -->
     </map>
 </view>

@@ -6,7 +6,55 @@
   .page-section .btn-search {
     display: inline-block;
     position: fixed;
-    width: 90%;
-    left: 5%;
-    top: 40rpx;
+    width: 650rpx;
+    left: 50rpx;
+    top: 30rpx;
     overflow: hidden; }
+    .page-section .btn-search .img {
+      display: inline-block;
+      width: 650rpx;
+      height: 90rpx; }
+  .page-section .btn-scale-low {
+    display: inline-block;
+    position: fixed;
+    width: 80rpx;
+    right: 20rpx;
+    top: 50%;
+    transform: translate(0, 60rpx); }
+    .page-section .btn-scale-low .img {
+      display: inline-block;
+      width: 80rpx;
+      height: 80rpx;
+      box-shadow: 1rpx 1rpx 3rpx #f5f5f5; }
+  .page-section .btn-scale-up {
+    display: inline-block;
+    position: fixed;
+    width: 80rpx;
+    right: 20rpx;
+    top: 50%;
+    transform: translate(0, -60rpx); }
+    .page-section .btn-scale-up .img {
+      display: inline-block;
+      width: 80rpx;
+      height: 80rpx;
+      box-shadow: 1rpx 1rpx 3rpx #f5f5f5; }
+  .page-section .btn-view-one {
+    display: inline-block;
+    position: fixed;
+    width: 80rpx;
+    left: 20rpx;
+    bottom: 170rpx; }
+    .page-section .btn-view-one .img {
+      display: inline-block;
+      width: 80rpx;
+      height: 80rpx; }
+  .page-section .btn-view-two {
+    display: inline-block;
+    position: fixed;
+    width: 80rpx;
+    left: 20rpx;
+    bottom: 50rpx; }
+    .page-section .btn-view-two .img {
+      display: inline-block;
+      width: 80rpx;
+      height: 80rpx; }

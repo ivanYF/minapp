@@ -6,9 +6,66 @@
 	.btn-search{
 		display: inline-block;
 		position: fixed;
-		width: 90%;
-		left: 5%;
-		top:40rpx;
+		width: 650rpx;
+		left: 50rpx;
+		top:30rpx;
 		overflow: hidden;
+		.img{
+			display: inline-block;
+			width: 650rpx;
+			height: 90rpx;
+		}
+	}
+	.btn-scale-low{
+		display: inline-block;
+		position: fixed;
+		width: 80rpx;
+		right: 20rpx;
+		top:50%;
+		transform: translate(0,60rpx);
+		.img{
+			display: inline-block;
+			width: 80rpx;
+			height: 80rpx;
+			box-shadow: 1rpx 1rpx 3rpx #f5f5f5;
+		}
+	}
+	.btn-scale-up{
+		display: inline-block;
+		position: fixed;
+		width: 80rpx;
+		right: 20rpx;
+		top:50%;
+		transform: translate(0,-60rpx);
+		.img{
+			display: inline-block;
+			width: 80rpx;
+			height: 80rpx;
+			box-shadow: 1rpx 1rpx 3rpx #f5f5f5;
+		}
+	}
+	.btn-view-one{
+		display: inline-block;
+		position: fixed;
+		width: 80rpx;
+		left: 20rpx;
+		bottom:170rpx;
+		.img{
+			display: inline-block;
+			width: 80rpx;
+			height: 80rpx;
+		}
+	}
+	.btn-view-two{
+		display: inline-block;
+		position: fixed;
+		width: 80rpx;
+		left: 20rpx;
+		bottom:50rpx;
+		.img{
+			display: inline-block;
+			width: 80rpx;
+			height: 80rpx;
+		}
 	}
 }

@@ -12,6 +12,8 @@ Page({
 		title: 'imap',
 		latitude: 23.099994,
 		longitude: 113.324520,
+		mapScale: 16,
+		city: '',
 		markers: [{
 			id: 1,
 			latitude: 23.099994,
@@ -50,9 +52,93 @@ Page({
   * 生命周期函数--监听页面显示
   */
 	onShow: function onShow() {
-		// TODO: onShow
+		var _this = this;
+		_this.getLocation();
 	},
+	getLocation: function getLocation() {
+		var _this = this;
+		console.log(1111);
 
+		wx.getSetting({
+			success: function success(res) {
+				console.log(res);
+				console.log(res.authSetting['scope.userLocation']);
+				if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {
+					wx.openSetting({
+						success: function success(data) {
+							console.log(data);
+							if (data.authSetting["scope.userLocation"] == true) {
+								wx.showToast({
+									title: '授权成功',
+									icon: 'success',
+									duration: 5000
+								});
+							} else {
+								wx.showToast({
+									title: '授权失败',
+									icon: 'success',
+									duration: 5000
+								});
+							}
+						}
+					});
+				} else if (res.authSetting['scope.userLocation'] == undefined) {//初始化进入
+
+				}
+			}
+		});
+
+		// wx.getLocation({
+		// 	type: 'wgs84',
+		// 	success (res) {
+		// 		_this.getCity(res);
+		// 	}
+		// })
+	},
+	getCity: function getCity(data) {
+		var _this = this;
+		var url = 'https://apis.map.qq.com/ws/geocoder/v1/?location=' + data.latitude + ',' + data.longitude + '&get_poi=0&key=ZNJBZ-EYYL6-HRQSI-MESUJ-TNSH7-6RBYK';
+		wx.request({
+			url: url,
+			method: 'GET',
+			success: function success(res) {
+				console.log(res);
+				if (res.data && res.data.result && res.data.result.address_component && res.data.result.address_component.city) {
+					_this.setData({ city: res.data.result.address_component.city });
+				}
+			}
+		});
+	},
+	minuScale: function minuScale() {
+		var scaleNub = this.data.mapScale;
+
+		if (scaleNub >= 5) {
+			--scaleNub;
+			this.setData({
+				mapScale: scaleNub
+			});
+		}
+	},
+	addScale: function addScale() {
+		var scaleNub = this.data.mapScale;
+		if (scaleNub <= 18) {
+			++scaleNub;
+			this.setData({
+				mapScale: scaleNub
+			});
+		}
+	},
+	updateMsg: function updateMsg() {
+		wx.showToast({
+			title: '正在开发中，敬请期待',
+			icon: 'none',
+			duration: 2000
+		});
+	},
+	updataLocation: function updataLocation() {
+		this.getLocation();
+		this.mapCtx.moveToLocation();
+	},
 
 	/**
   * 生命周期函数--监听页面隐藏
