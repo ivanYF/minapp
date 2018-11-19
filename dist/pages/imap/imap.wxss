@@ -73,3 +73,11 @@
       display: inline-block;
       width: 80rpx;
       height: 80rpx; }
+    .page-section .btn-view-two .openSetting {
+      display: inline-block;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0; }

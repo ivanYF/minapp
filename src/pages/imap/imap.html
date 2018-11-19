@@ -8,9 +8,9 @@
         covers="{{covers}}"
         scale="{{mapScale}}"
         show-location>
-            <cover-view class="btn-open" bindtap="">
+            <!-- <cover-view class="btn-open" bindtap="">
                 <button open-type="openSetting" bindopensetting="openSetting">获取当前位置</button>
-            </cover-view>
+            </cover-view> -->
             <cover-view class="btn-search" bindtap="gotosearch">
                 <cover-image class="img" src="../../images/map-search.png" />
             </cover-view>
@@ -25,6 +25,7 @@
             </cover-view>
             <cover-view class="btn-view-two" bindtap="updataLocation">
                 <cover-image class="img" src="../../images/btn-map-4.png" />
+                <button wx:if="{{showOpenSetting}}" class="openSetting" open-type="openSetting" bindopensetting="openSetting">获取当前位置</button>
             </cover-view>
         <!-- </cover-view> -->
     </map>

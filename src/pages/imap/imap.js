@@ -12,6 +12,7 @@ Page({
     	longitude: 113.324520,
 		mapScale:16,
 		city:'',
+		showOpenSetting:false,
 		markers: [{
 			id: 1,
 			latitude: 23.099994,
@@ -53,49 +54,21 @@ Page({
 	},
 	getLocation(){
 		let _this = this;
-		console.log(1111)
-
-		wx.getSetting({
-      		success: (res) => {
-        		console.log(res);
-       			console.log(res.authSetting['scope.userLocation']);
-        		if (res.authSetting['scope.userLocation'] != undefined && res.authSetting['scope.userLocation'] != true) {
-          			wx.openSetting({
-						success: function (data) {
-							console.log(data);
-							if (data.authSetting["scope.userLocation"] == true) {
-								wx.showToast({
-									title: '授权成功',
-									icon: 'success',
-									duration: 5000
-								})
-							}else{
-								wx.showToast({
-									title: '授权失败',
-									icon: 'success',
-									duration: 5000
-								})
-							}
-						}
-					})
-        		} else if (res.authSetting['scope.userLocation'] == undefined) {//初始化进入
-          			
-        		}
-      		}
-    	})
-
-
-
-		// wx.getLocation({
-		// 	type: 'wgs84',
-		// 	success (res) {
-		// 		_this.getCity(res);
-		// 	}
-		// })
+		wx.getLocation({
+			type: 'wgs84',
+			success (res) {
+				if(res.latitude && res.longitude){
+					_this.getCity(res);
+				}else{
+					_this.setData({ showOpenSetting: true })
+				}
+			}
+		})
 	},
 	getCity(data){
 		let _this = this;
-		let url = `https://apis.map.qq.com/ws/geocoder/v1/?location=${data.latitude},${data.longitude}&get_poi=0&key=ZNJBZ-EYYL6-HRQSI-MESUJ-TNSH7-6RBYK`;
+		let key = '腾讯地图的key'
+		let url = `https://apis.map.qq.com/ws/geocoder/v1/?location=${data.latitude},${data.longitude}&get_poi=0&key=${key}`;
 		wx.request({
 			url: url,
 			method:'GET',
@@ -106,6 +79,10 @@ Page({
 				}
 			}
 		})
+	},
+	openSetting(){
+		let _this = this;
+		_this.getLocation();
 	},
 	minuScale(){
 		let scaleNub = this.data.mapScale;
