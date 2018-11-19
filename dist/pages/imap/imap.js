@@ -71,7 +71,8 @@ Page({
 	},
 	getCity: function getCity(data) {
 		var _this = this;
-		var url = 'https://apis.map.qq.com/ws/geocoder/v1/?location=' + data.latitude + ',' + data.longitude + '&get_poi=0&key=ZNJBZ-EYYL6-HRQSI-MESUJ-TNSH7-6RBYK';
+		var key = '腾讯地图的key';
+		var url = 'https://apis.map.qq.com/ws/geocoder/v1/?location=' + data.latitude + ',' + data.longitude + '&get_poi=0&key=' + key;
 		wx.request({
 			url: url,
 			method: 'GET',

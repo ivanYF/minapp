@@ -1,4 +1,40 @@
 <!-- 可用组件：https://mp.weixin.qq.com/debug/wxadoc/dev/component/ -->
 <view class="container">
-  <text class="title">{{ title }}</text>
+	<view class="search-fix">
+		<view class="search-wrap">
+			<!-- <img src=""> -->
+			<input class="search-input" bindinput="searchCity" placeholder="请输入城市名称" />
+		</view>
+	</view>
+	<view class="hot-city">
+		<view class="name">已开通城市</view>
+		<view class="content">
+			<view class="item">北京</view>
+			<view class="item">上海</view>
+			<view class="item">广州</view>
+			<view class="item">深圳</view>
+		</view>
+	</view>
+	<view class="all-city">
+		<view class="item">
+			<view class="name">A</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+		</view>
+		<view class="item">
+			<view class="name">B</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+			<view class="text">阿拉善</view>
+		</view>
+	</view>
 </view>

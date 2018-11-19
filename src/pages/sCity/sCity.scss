@@ -1,3 +1,99 @@
-.title {
-  font-size: 40rpx;
+page{
+	background-color: #fff;
+}
+.container{
+	width: 100%;
+	box-sizing:border-box;
+	font-size: 0;
+	text-align: center;
+	padding-top: 100rpx;
+	.search-fix{
+		position: fixed;
+		left: 0;
+		top:0;
+		background-color: #fff;
+		display: inline-block;
+		width: 100%;
+		overflow: hidden;
+		border-bottom: 1rpx solid #f5f5f5;
+		.search-wrap{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			height: 65rpx;
+			border: 1rpx solid #ccc;
+			border-radius: 40rpx;
+			margin: 15rpx auto;
+			width: 700rpx;
+			.search-input{
+				display: inline-block;
+				flex: 1;
+				padding: 15rpx 20rpx;
+				font-size: 28rpx;
+				color: #666;
+				line-height: 35rpx;
+				text-align: left;
+				border: 0;
+			}
+		}
+	}
+	
+	.hot-city{
+		display: inline-block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 20rpx 25rpx;
+		overflow: hidden;
+		text-align: left;
+		.name{
+			display: inline-block;
+			width: 100%;
+			overflow: hidden;
+			font-size: 30rpx;
+			color: #999;
+		}
+		.content{
+			width: 100%;
+			display: inline-block;
+			overflow: hidden;
+			padding: 30rpx 0;
+			.item{
+				font-size: 28rpx;
+				line-height: 60rpx;
+				display: inline-block;
+				text-align: center;
+				width: 25%;
+				color: #666;
+			}
+		}
+	}
+	.all-city{
+		display: inline-block;
+		width: 100%;
+		overflow: hidden;
+		.item{
+			display: inline-block;
+			width: 100%;
+			overflow: hidden;
+			text-align: left;
+			.name{
+				background-color: #f5f5f5;
+				line-height: 60rpx;
+				display: inline-block;
+				font-size: 32rpx;
+				text-indent: 25rpx;
+				width: 100%;
+				color: #999;
+			}
+			.text{
+				border-bottom: 1rpx solid #f5f5f5;
+				line-height: 65rpx;
+				display: inline-block;
+				font-size: 32rpx;
+				text-indent: 25rpx;
+				width: 100%;
+				color: #666;
+			}
+		}
+	}
 }
