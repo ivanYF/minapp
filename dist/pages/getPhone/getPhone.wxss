@@ -1,0 +1,16 @@
+.container {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  text-align: center; }
+
+.getphone {
+  display: inline-block;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  text-align: center;
+  width: 700rpx;
+  border-radius: 10rpx;
+  margin: 200rpx auto 0 auto;
+  background-color: #35495e;
+  color: #fff; }

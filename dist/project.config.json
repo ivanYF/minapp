@@ -36,7 +36,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -59,7 +59,13 @@
 				{
 					"id": -1,
 					"name": "选择城市",
-					"pathName": "pages/sCity/sCity"
+					"pathName": "pages/sCity/sCity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "获取手机号",
+					"pathName": "pages/getPhone/getPhone"
 				}
 			]
 		}
