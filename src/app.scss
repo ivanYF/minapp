@@ -1,17 +1,18 @@
 // Global style write by less
 // Build to dist/app.wxss
+@import "pages/wxParse/wxParse.wxss";
+// page {
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
+//   width: 100%;
+//   background-color: #f9f9f9;
+//   font-family: -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
+//   overflow-y: auto;
+// }
 
-page {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  background-color: #f9f9f9;
-  font-family: -apple-system-font, 'Helvetica Neue', Helvetica, 'Microsoft YaHei', sans-serif;
-}
-
-::-webkit-scrollbar{
-  width: 0;
-  height: 0;
-  color: transparent;
-}
+// ::-webkit-scrollbar{
+//   width: 0;
+//   height: 0;
+//   color: transparent;
+// }

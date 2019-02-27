@@ -16,8 +16,11 @@
         "pages/formid/formid",
         "pages/imap/imap",
         "pages/sCity/sCity",
-        "pages/getPhone/getPhone"
+        "pages/getPhone/getPhone",
+        "pages/parsedemo/parsedemo",
+        "pages/backaudio/backaudio"
     ],
+    "requiredBackgroundModes": ["audio"],
     "window": {
         // 类型：HexColor；默认值：#000000
         // 导航栏背景颜色，如"#000000"
